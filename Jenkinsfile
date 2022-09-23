@@ -14,24 +14,17 @@ pipeline {
         stage('Build'){
             steps{
         
-                bat 'javac -classpath lib/junit-platform-console-standalone-1.7.0-all.jar src/CarTest.java src/Car.java src/App.java'
+                bat 'javac -classpath lib/junit-platform-console-standalone-1.7.0-all.jar CarTest.java Car.java App.java'
             }
         }
 
         stage('Test'){
             steps{
-                bat 'cd src/'
-                bat 'java -jar ../lib/junit-platform-console-standalone-1.7.0-all.jar -cp "." --select-class CarTest --reports-dir="reports"'
-                junit 'src/reports/*-jupiter.xml'
+                bat 'java -jar lib/junit-platform-console-standalone-1.7.0-all.jar -cp "." --select-class CarTest --reports-dir="reports"'
+                junit 'reports/*-jupiter.xml'
             }
         }
 
-        stage('Deploy'){
-            steps{
-                bat 'cd src/'
-                bat 'java App' 
-            }
-        }
     }
 
 }
