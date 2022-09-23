@@ -14,7 +14,7 @@ pipeline {
         stage('Build'){
             steps{
         
-                bat 'javac -classpath lib/junit-platform-console-standalone-1.7.0-all.jar CarTest.java Car.java App.java'
+                bat 'javac -classpath lib/junit-platform-console-standalone-1.7.0-all.jar CarTest.java Car.java '
             }
         }
 
