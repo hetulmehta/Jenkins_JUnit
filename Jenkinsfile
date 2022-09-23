@@ -25,11 +25,6 @@ pipeline {
             }
         }
 
-        stage('Deploy'){
-            steps{
-                bat 'java App' 
-            }
-        }
     }
 
 }
