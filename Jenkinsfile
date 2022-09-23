@@ -15,6 +15,7 @@ pipeline {
             steps{
                 bat 'mkdir lib'
                 bat 'cd lib/'
+                bat 'cd'
                 bat' curl https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.7.0/junit-platform-console-standalone-1.7.0-all.jar'
                 bat 'tree /f'
                 bat 'javac -classpath lib/junit-platform-console-standalone-1.7.0-all.jar src/CarTest.java src/Car.java src/App.java'
