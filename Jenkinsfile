@@ -6,7 +6,7 @@ pipeline {
         stage('Checkout Codebase'){
             steps{
                 cleanWs()
-                checkout scm: [$class: 'GitSCM', branches: [[name: '*/main']],userRemoteConfigs:
+                checkout scm: [$class: 'GitSCM', branches: [[name: '*/master']],userRemoteConfigs:
                 [[url: 'https://github.com/hetulmehta/Jenkins_JUnit.git']]]
             }
         }
@@ -16,7 +16,7 @@ pipeline {
                 bat 'mkdir lib'
                 bat 'cd lib/'
                 bat' curl https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.7.0/junit-platform-console-standalone-1.7.0-all.jar'
-                bat 'dir /s'
+                bat 'tree /f'
                 bat 'javac -classpath lib/junit-platform-console-standalone-1.7.0-all.jar src/CarTest.java src/Car.java src/App.java'
             }
         }
