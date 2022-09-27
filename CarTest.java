@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 
 public class CarTest {
 
-    String make = "Honda"; 
+    String make = "BMW"; 
     String model = "Civic"; 
     Car testCar = new Car(make, model); 
     
@@ -11,7 +11,7 @@ public class CarTest {
     @Test
     public void testMake(){
         System.out.println("Running Test 1!");
-        Assertions.assertEquals("Honda", testCar.getMake(),"Expected vehicle make did not match actual vehicle make"); 
+        Assertions.assertEquals("BMW", testCar.getMake(),"Expected vehicle make did not match actual vehicle make"); 
     }
 
     @Test 
